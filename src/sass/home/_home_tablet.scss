@@ -1,0 +1,53 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$bp-tablet-start) {
+  #home {
+    main {
+      padding: 3.75rem 3rem 0 3rem;
+      max-width: 45rem;
+      margin-inline: auto;
+
+      .secondary_header {
+        margin-bottom: 3.5rem;
+
+        &-right {
+          &-newInvoice-button {
+            gap: 1rem;
+          }
+        }
+      }
+
+      .invoices_list {
+        &-item {
+          height: 4.5rem;
+
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+            gap: 2rem !important;
+            padding-inline: 1.5rem;
+          }
+
+          &-id,
+          &-date,
+          &-client,
+          &-amount,
+          &-status {
+            position: static;
+          }
+
+          &-client {
+            margin-right: auto;
+          }
+
+          &-amount {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+}

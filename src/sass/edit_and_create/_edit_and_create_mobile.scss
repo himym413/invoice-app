@@ -1,0 +1,222 @@
+@use "../variables";
+
+main {
+  .newForm {
+    .form_footer {
+      justify-content: space-between;
+
+      div {
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .editForm {
+    .date_container {
+      opacity: 0.5;
+    }
+  }
+}
+
+main {
+  position: relative;
+  .form {
+    position: fixed;
+    inset: 0;
+    top: 4.5rem;
+    background-color: variables.$neutral-100;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    overflow-y: scroll;
+    z-index: 100;
+
+    &_header {
+      margin-bottom: 1.5rem;
+
+      &-from {
+        margin-bottom: 1.5rem;
+      }
+
+      &-list {
+        font-size: 1.125rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &_footer {
+      justify-content: flex-end;
+      gap: 0.5rem;
+      padding: 1.5rem;
+      margin: -1.5rem;
+      z-index: 2;
+      box-shadow: 0px -16px 16px 8px rgba(0, 0, 0, 0.15);
+      -webkit-box-shadow: 0px -16px 16px 8px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 0px -16px 16px 8px rgba(0, 0, 0, 0.15);
+
+      button {
+        padding: 1rem 1.5rem;
+        border-radius: 1.5rem;
+      }
+
+      .draft-button {
+        background-color: variables.$neutral-400;
+      }
+
+      .cancel-button {
+        background-color: rgba(55, 59, 83, 0.5);
+      }
+
+      .save-button {
+        background-color: variables.$primary-600;
+      }
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    input,
+    .select_options,
+    .select_date {
+      background-color: transparent;
+      padding: 0.75rem 1rem;
+      border-radius: 0.25rem;
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      margin-bottom: 1.5rem;
+      outline: none;
+    }
+
+    input:focus,
+    .select_options:focus,
+    .select_date:focus {
+      border: 1px solid variables.$primary-600;
+      caret-color: variables.$primary-600;
+    }
+
+    .options_container,
+    .date_container {
+      position: relative;
+    }
+
+    .options {
+      z-index: 1;
+      position: absolute;
+      top: 4.75rem;
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+      background-color: variables.$neutral-100;
+      border-radius: 0.5rem;
+      box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+
+      span {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      span:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .select_options {
+      padding-top: 1rem;
+      display: block;
+      background-image: url("/src/assets/icon-arrow-down.svg");
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+      height: 2.75rem;
+    }
+
+    .select_date {
+      padding-top: 1rem;
+      display: block;
+      background-image: url("/src/assets/icon-calendar.svg");
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+      height: 2.75rem;
+    }
+
+    .flex_for_mobile {
+      gap: 2rem;
+
+      div {
+        width: 100%;
+      }
+
+      &_three-items {
+        justify-content: space-between;
+        gap: 1rem;
+      }
+    }
+
+    .select_date,
+    .select_options {
+      padding-right: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0;
+        padding: 0;
+
+        div:nth-child(2) {
+          div:nth-child(1) {
+            width: 20%;
+          }
+
+          div:nth-child(2),
+          div:nth-child(3) {
+            width: 35%;
+          }
+
+          div:nth-child(3) {
+            .false_label {
+              margin-bottom: 1.25rem;
+            }
+
+            .false_input {
+              margin-bottom: 2.25rem;
+            }
+          }
+
+          button {
+            width: 10%;
+            justify-self: flex-end;
+          }
+        }
+      }
+    }
+
+    .add_item-button {
+      text-align: center;
+      width: 100%;
+      margin-top: 2rem;
+      background-color: rgba(223, 227, 250, 0.5);
+      border-radius: 1.5rem;
+      padding-block: 0.85rem;
+      margin-bottom: 5.5rem;
+    }
+
+    .delete_item-button {
+      margin-bottom: -0.5rem;
+    }
+
+    // Removes input type number arrows
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+}

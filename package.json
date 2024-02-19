@@ -1,0 +1,23 @@
+{
+  "name": "starter-code",
+  "version": "1.0.0",
+  "description": "Frontend Mentor Challenge",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Igor Šešlak",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.1",
+    "parcel": "^2.10.1"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.9",
+    "@fullcalendar/daygrid": "^6.1.9",
+    "@fullcalendar/interaction": "^6.1.9",
+    "core-js": "^3.33.3",
+    "regenerator-runtime": "^0.14.0"
+  }
+}

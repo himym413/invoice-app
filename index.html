@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./src/sass/main.scss" />
+
+    <script type="module" src="./src/js/calendar.js"></script>
+    <script type="module" src="./src/js/controller.js"></script>
+
+    <title>Frontend Mentor | Invoice app</title>
+  </head>
+  <body id="home">
+    <!-- PRIMARY HEADER -->
+    <header class="primary_header | flex">
+      <div class="primary_header_logo">
+        <img src="./src/assets/logo.svg" alt="Logo" />
+      </div>
+
+      <div class="primary_header-right | flex">
+        <button class="primary_header-right-toggleDarkMode"></button>
+        <div class="primary_header-right-line-divider"></div>
+        <img
+          class="primary_header-right-avatar"
+          src="./src/assets/image-avatar.jpg"
+          alt="Avatar"
+        />
+      </div>
+    </header>
+
+    <main>
+      <!-- SECONDARY HEADER -->
+      <section class="secondary_header | flex">
+        <div class="secondary_header-left">
+          <h1 class="font-heading-L dark-color">Invoices</h1>
+          <p class="invoices_total font-body faded-color">
+            <span class="hidden-for-mobile">There are </span>
+            <span class="numberOfInvoices">7</span>
+            <span class="hidden-for-mobile">total </span>invoices
+          </p>
+        </div>
+
+        <div class="secondary_header-right | flex">
+          <button class="secondary_header-right-filter-button | flex">
+            <p class="font-heading-S-2">
+              Filter <span class="hidden-for-mobile"> by status</span>
+            </p>
+            <img src="./src/assets/icon-arrow-down.svg" alt="Filter arrow" />
+          </button>
+
+          <button class="secondary_header-right-newInvoice-button | flex">
+            <img
+              class="secondary_header-right-newInvoice-button-plusSign"
+              src="./src/assets/icon-plus.svg"
+              alt="Plus Sign"
+            />
+            <p class="font-heading-S-2 light-color">
+              New<span class="hidden-for-mobile"> Invoice</span>
+            </p>
+          </button>
+
+          <div class="hide secondary_header-right-filter-options">
+            <div
+              class="secondary_header-right-filter-options-option | flex font-heading-S-2 dark-color"
+              data-checked="false"
+            >
+              <div class="checkmark"></div>
+              <p>Draft</p>
+            </div>
+            <div
+              class="secondary_header-right-filter-options-option | flex font-heading-S-2 dark-color"
+              data-checked="false"
+            >
+              <div class="checkmark"></div>
+              <p>Pending</p>
+            </div>
+            <div
+              class="secondary_header-right-filter-options-option | flex font-heading-S-2 dark-color"
+              data-checked="false"
+            >
+              <div class="checkmark"></div>
+              <p>Paid</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVOICES LIST -->
+      <section class="invoices">
+        <ul class="invoices_list | flex">
+          <!-- <a href="invoice.html"> -->
+          <!-- <li class="invoices_list-item">
+            <a href="invoice.html">
+              <h2 class="invoices_list-item-id | font-heading-S-2 dark-color">
+                <span class="primary-color">#</span>RT3080
+              </h2>
+
+              <p class="invoices_list-item-date | font-body faded-color">
+                Due 19 Aug 2021
+              </p>
+
+              <p class="invoices_list-item-client | font-body faded-color">
+                Jensen Huang
+              </p>
+
+              <p class="invoices_list-item-amount | font-heading-S dark-color">
+                £1,800.90
+              </p>
+
+              <div
+                class="invoices_list-item-status | flex paid-color paid-background font-heading-S-2"
+              >
+                <span class="dot-paid"></span>
+                <p>Paid</p>
+              </div>
+
+              <img
+                class="hidden-for-mobile"
+                src="./src/assets/icon-arrow-right.svg"
+                alt="Arrow right"
+              />
+            </a>
+          </li> -->
+
+          <!-- <div class="invoices_list-empty | flex">
+            <div class="invoices_list-empty-ilustration"></div>
+            <h2 class="font-heading-L">There is nothing here</h2>
+            <p class="font-body faded-color">
+              Create an invoice by clicking the
+            </p>
+            <p class="font-body faded-color">
+              <strong>New</strong> button and get started
+            </p>
+          </div> -->
+        </ul>
+      </section>
+
+      <form id="newForm" class="newForm form hide">
+        <button class="go-back-button | flex font-heading-S-2 dark-color">
+          <img src="/src/assets/icon-arrow-left.svg" alt="Arrow Left" />
+          Go back
+        </button>
+
+        <h2 class="form_header | font-heading-M">New Invoice</h2>
+
+        <h3 class="form_header-from font-body-2 primary-color">
+          <strong>Bill From</strong>
+        </h3>
+
+        <div>
+          <label for="street_address_from" class="font-body faded-color"
+            >Street Address</label
+          >
+          <input
+            type="text"
+            name="street_address_from"
+            id="street_address_from"
+            class="font-heading-S-2 dark-color"
+          />
+        </div>
+
+        <div class="flex_for_tablet">
+          <div class="flex_for_mobile | flex">
+            <div>
+              <label for="city_from" class="font-body faded-color">City</label>
+              <input
+                type="text"
+                name="city_from"
+                id="city_from"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+
+            <div>
+              <label for="post_code_from" class="font-body faded-color"
+                >Post Code</label
+              >
+              <input
+                type="text"
+                name="post_code_from"
+                id="post_code_from"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="country_from" class="font-body faded-color"
+              >Country</label
+            >
+            <input
+              type="text"
+              name="country_from"
+              id="country_from"
+              class="font-heading-S-2 dark-color"
+            />
+          </div>
+        </div>
+
+        <h3 class="form_header-from font-body-2 primary-color">
+          <strong>Bill To</strong>
+        </h3>
+
+        <div>
+          <label for="clients_name_to" class="font-body faded-color"
+            >Client's Name</label
+          >
+          <input
+            type="text"
+            name="clients_name_to"
+            id="clients_name_to"
+            class="font-heading-S-2 dark-color"
+          />
+        </div>
+
+        <div>
+          <label for="clients_email_to" class="font-body faded-color"
+            >Client's Email</label
+          >
+          <input
+            type="email"
+            name="clients_email_to"
+            id="clients_email_to"
+            class="font-heading-S-2 dark-color"
+            placeholder="e.g. email@example.com"
+          />
+        </div>
+
+        <div>
+          <label for="street_address_to" class="font-body faded-color"
+            >Street Address</label
+          >
+          <input
+            type="text"
+            name="street_address_to"
+            id="street_address_to"
+            class="font-heading-S-2 dark-color"
+          />
+        </div>
+
+        <div class="flex_for_tablet">
+          <div class="flex_for_mobile | flex">
+            <div>
+              <label for="city_to" class="font-body faded-color">City</label>
+              <input
+                type="text"
+                name="city_to"
+                id="city_to"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+
+            <div>
+              <label for="post_code_to" class="font-body faded-color"
+                >Post Code</label
+              >
+              <input
+                type="text"
+                name="post_code_to"
+                id="post_code_to"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="country_to" class="font-body faded-color"
+              >Country</label
+            >
+            <input
+              type="text"
+              name="country_to"
+              id="country_to"
+              class="font-heading-S-2 dark-color"
+            />
+          </div>
+        </div>
+
+        <div class="flex_for_tablet | flex_for_tablet_two-items">
+          <div class="date_container">
+            <label for="date_to" class="font-body faded-color"
+              >Invoice Date</label
+            >
+
+            <span
+              class="select_date font-heading-S-2 dark-color"
+              name="date_to"
+              id="date_to"
+            >
+            </span>
+            <div id="calendar"></div>
+          </div>
+
+          <div class="options_container">
+            <label for="payment_to" class="font-body faded-color"
+              >Payment Terms</label
+            >
+
+            <span
+              class="select_options font-heading-S-2 dark-color"
+              name="payment_to"
+              id="payment_to"
+            >
+              Net 30 Days
+            </span>
+            <div class="hide options flex font-heading-S-2 dark-color">
+              <span>Net 1 Day</span>
+              <span>Net 7 Days</span>
+              <span>Net 14 Days</span>
+              <span>Net 30 Days</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="description_to" class="font-body faded-color"
+            >Project Description</label
+          >
+          <input
+            type="text"
+            name="description_to"
+            id="description_to"
+            class="font-heading-S-2 dark-color"
+            placeholder="e.g. Graphic Design Service"
+          />
+        </div>
+
+        <h3 class="form_header-list font-body-2 faded-color">
+          <strong>Item List</strong>
+        </h3>
+
+        <ul class="item_list">
+          <!-- <div class="item_labels hidden-for-mobile flex_for_tablet">
+            <p class="font-body faded-color">Item Name</p>
+            <p class="font-body faded-color">Qty.</p>
+            <p class="font-body faded-color">Price</p>
+            <p class="font-body faded-color">Total</p>
+          </div> -->
+          <!-- <li class="flex_for_tablet">
+            <div>
+              <label for="item_name" class="font-body faded-color"
+                >Item Name</label
+              >
+              <input
+                type="text"
+                name="item_name"
+                id="item_name"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+            <div class="flex flex_for_mobile_three-items">
+              <div>
+                <label for="item_qty" class="font-body faded-color">Qty.</label>
+                <input
+                  type="number"
+                  name="item_qty"
+                  id="item_qty"
+                  class="font-heading-S-2 dark-color"
+                />
+              </div>
+              <div>
+                <label for="item_price" class="font-body faded-color"
+                  >Price</label
+                >
+                <input
+                  type="number"
+                  step=".01"
+                  name="item_price"
+                  id="item_price"
+                  class="font-heading-S-2 dark-color"
+                />
+              </div>
+              <div>
+                <p class="false_label | font-body faded-color">Total</p>
+                <p class="false_input | font-heading-S-2 faded-color">156.00</p>
+              </div>
+              <button class="delete_item-button">
+                <svg width="13" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M11.583 3.556v10.666c0 .982-.795 1.778-1.777 1.778H2.694a1.777 1.777 0 01-1.777-1.778V3.556h10.666zM8.473 0l.888.889h3.111v1.778H.028V.889h3.11L4.029 0h4.444z" fill="#888EB0" fill-rule="nonzero"/></svg>
+              </button>
+            </div>
+          </li> -->
+
+          <button class="add_item-button | primary-color">
+            <strong>+ Add New Item</strong>
+          </button>
+        </ul>
+
+        <div class="form_footer | flex">
+          <button
+            class="cancel-button | font-heading-S-2 faded-color"
+            type="submit"
+          >
+            Discard
+          </button>
+          <div class="flex">
+            <button
+              class="draft-button | font-heading-S-2 faded-color"
+              type="submit"
+            >
+              Save as Draft
+            </button>
+            <button
+              class="save-button | font-heading-S-2 light-color"
+              type="submit"
+            >
+              Save & Send
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="overlay hide"></div>
+    </main>
+  </body>
+</html>

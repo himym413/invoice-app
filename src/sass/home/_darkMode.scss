@@ -1,0 +1,254 @@
+@use "../variables";
+
+.darkMode {
+  background-color: variables.$neutral-700 !important;
+
+  .primary_header {
+    background-color: variables.$neutral-600 !important;
+
+    &-right {
+      &-toggleDarkMode {
+        -webkit-mask: url("/src/assets/icon-sun.svg") no-repeat 100% 100%;
+        mask: url("/src/assets/icon-sun.svg") no-repeat 100% 100%;
+      }
+    }
+  }
+
+  main {
+    .secondary_header {
+      &-left {
+        h1,
+        p {
+          color: variables.$neutral-100 !important;
+        }
+      }
+
+      &-right {
+        &-filter-button {
+          p {
+            color: variables.$neutral-100 !important;
+          }
+        }
+
+        &-filter-options {
+          background-color: variables.$neutral-600 !important;
+
+          .checkmark {
+            background-color: variables.$neutral-700 !important;
+          }
+
+          p {
+            color: variables.$neutral-100 !important;
+          }
+        }
+      }
+    }
+
+    .invoices {
+      &_list {
+        &-item {
+          background-color: variables.$neutral-600 !important;
+          &-id,
+          &-client,
+          &-amount {
+            color: variables.$neutral-100 !important;
+          }
+
+          &-date {
+            color: variables.$primary-200 !important;
+          }
+        }
+
+        &-empty {
+          h2 {
+            color: variables.$neutral-100 !important;
+          }
+
+          p {
+            color: variables.$primary-200 !important;
+          }
+        }
+      }
+    }
+
+    .go-back-button {
+      color: variables.$neutral-100 !important;
+
+      &:hover {
+        opacity: 0.5 !important;
+      }
+    }
+
+    .status_card {
+      background-color: variables.$neutral-600 !important;
+      &-text {
+        color: variables.$primary-200 !important;
+      }
+
+      &-right button {
+        color: variables.$neutral-100 !important;
+
+        &:hover {
+        }
+      }
+    }
+
+    .details {
+      background-color: variables.$neutral-600 !important;
+      &_top {
+        h1 {
+          color: variables.$neutral-100 !important;
+        }
+
+        p {
+          color: variables.$primary-200 !important;
+        }
+      }
+
+      &_bottom {
+        .details_date-about,
+        .details_due-about,
+        .details_sent-about,
+        .details_bill-about,
+        .details_bill-address p {
+          color: variables.$primary-200 !important;
+        }
+
+        .details_date-date,
+        .details_due-date,
+        .details_sent-email,
+        .details_bill-name {
+          color: variables.$neutral-100 !important;
+        }
+      }
+
+      &_footer {
+        background-color: variables.$neutral-500 !important;
+
+        &-general p {
+          color: variables.$primary-200 !important;
+        }
+
+        &-item {
+          &-name {
+            color: variables.$neutral-100 !important;
+          }
+
+          &-about {
+            &-qty,
+            &-price,
+            &-total {
+              color: variables.$neutral-100 !important;
+            }
+          }
+        }
+
+        &-bottom {
+          background-color: variables.$neutral-800 !important;
+        }
+      }
+    }
+
+    .main_footer {
+      background-color: variables.$neutral-600 !important;
+
+      .edit_button {
+        color: variables.$neutral-100 !important;
+      }
+    }
+
+    .form {
+      background-color: variables.$neutral-700 !important;
+
+      &_header {
+        color: variables.$neutral-100 !important;
+      }
+
+      input {
+        color: variables.$neutral-100 !important;
+        background-color: variables.$neutral-600 !important;
+      }
+
+      .date_container {
+        .select_date {
+          color: variables.$neutral-100 !important;
+          background-color: variables.$neutral-600 !important;
+        }
+      }
+
+      .options_container {
+        .select_options {
+          color: variables.$neutral-100 !important;
+          background-color: variables.$neutral-600 !important;
+        }
+
+        .options {
+          background-color: variables.$neutral-600 !important;
+          span {
+            color: variables.$neutral-100 !important;
+
+            &:hover {
+              color: variables.$primary-600 !important;
+            }
+          }
+        }
+      }
+
+      .add_item-button {
+        background-color: variables.$neutral-600 !important;
+      }
+
+      &_footer {
+        background-color: variables.$neutral-600 !important;
+
+        .cancel-button,
+        .draft-button {
+          color: variables.$neutral-100 !important;
+        }
+      }
+
+      #calendar {
+        background-color: variables.$neutral-600 !important;
+      }
+      .fc-toolbar-title,
+      .fc-day {
+        color: variables.$neutral-100 !important;
+      }
+    }
+
+    .overlay,
+    .overlay_delete-modal {
+      background-color: rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .delete-modal {
+      background-color: variables.$neutral-600 !important;
+
+      h2,
+      button {
+        color: variables.$neutral-100 !important;
+      }
+
+      p {
+        color: variables.$primary-200 !important;
+      }
+    }
+  }
+
+  .delete-modal {
+    background-color: variables.$neutral-600 !important;
+
+    h2 {
+      color: variables.$neutral-100 !important;
+    }
+
+    &_cancelBtn {
+      color: variables.$neutral-200 !important;
+      background-color: rgba(55, 59, 83, 0.5) !important;
+    }
+
+    &_deleteBtn {
+      color: variables.$neutral-200 !important;
+    }
+  }
+}

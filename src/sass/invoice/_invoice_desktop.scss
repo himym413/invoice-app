@@ -1,0 +1,9 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$bp-desktop-start) {
+  #invoice {
+    main {
+      margin-top: 0;
+    }
+  }
+}

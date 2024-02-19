@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./src/sass/main.scss" />
+
+    <!-- MAYBE Don't need calendar here as it shouldnt be changed -->
+    <script type="module" src="./src/js/calendar.js"></script>
+    <script type="module" src="./src/js/controller.js"></script>
+
+    <title>Frontend Mentor | Invoice app</title>
+  </head>
+
+  <body id="invoice">
+    <!-- Primary header -->
+    <header class="primary_header | flex">
+      <div class="primary_header_logo">
+        <img src="./src/assets/logo.svg" alt="Logo" />
+      </div>
+
+      <div class="primary_header-right | flex">
+        <button class="primary_header-right-toggleDarkMode"></button>
+        <div class="primary_header-right-line-divider"></div>
+        <img
+          class="primary_header-right-avatar"
+          src="./src/assets/image-avatar.jpg"
+          alt="Avatar"
+        />
+      </div>
+    </header>
+
+    <main>
+      <!-- Go back button -->
+      <a
+        href="index.html"
+        class="go-back-button | flex font-heading-S-2 dark-color"
+      >
+        <img src="/src/assets/icon-arrow-left.svg" alt="Arrow Left" />
+        Go back
+      </a>
+
+      <!-- Invoice details status card -->
+      <div class="invoice_wrapper">
+        <!-- <section class="status_card | flex">
+          <div class="status_card-left | flex">
+            <p class="status_card-text | font-body faded-color">Status</p>
+            <div class="status_card-status | flex">
+              <span class="dot-pending"></span>
+              <p class="pending-color font-heading-S-2">Pending</p>
+            </div>
+          </div> -->
+
+        <!-- Invoice details status card for tablet and desktop -->
+        <!-- <div class="status_card-right">
+            <button class="edit_button | font-heading-S-2 draft-color">
+              Edit
+            </button>
+            <button class="delete_button | font-heading-S-2 light-color">
+              Delete
+            </button>
+            <button class="markAsPaid_button | font-heading-S-2 light-color">
+              Mark as Paid
+            </button>
+          </div>
+        </section> -->
+
+        <!-- Invoice details section -->
+        <!-- <section class="details">
+          <div class="details_top | flex">
+            <div class="details_top-left | flex">
+              <h1 class="details_top-id | font-heading-S-2 dark-color">
+                <span class="primary-color">#</span>XM9141
+              </h1>
+              <p class="details_top-description | font-body faded-color">
+                Graphic design
+              </p>
+            </div>
+            <div class="details_top-address">
+              <p class="details_top-address-street | font-body faded-color">
+                19 Union Terrace
+              </p>
+              <p class="details_top-address-city | font-body faded-color">
+                London
+              </p>
+              <p class="details_top-address-postCode | font-body faded-color">
+                E1 3EZ
+              </p>
+              <p class="details_top-address-country | font-body faded-color">
+                United Kingdom
+              </p>
+            </div>
+          </div>
+
+          <div class="details_bottom | flex">
+            <div class="details_bottom-left | flex">
+              <div class="details_date | flex">
+                <p class="details_date-about | font-body faded-color">
+                  Invoice Date
+                </p>
+                <p class="details_date-date | font-heading-S dark-color">
+                  21 Aug 2021
+                </p>
+              </div>
+              <div class="details_due | flex">
+                <p class="details_due-about | font-body faded-color">
+                  Payment Due
+                </p>
+                <p class="details_due-date | font-heading-S dark-color">
+                  20 Sep 2021
+                </p>
+              </div>
+              <div class="details_sent | flex">
+                <p class="details_sent-about | font-body faded-color">
+                  Sent to
+                </p>
+                <p class="details_sent-email | font-heading-S dark-color">
+                  alexgrim@mail.com
+                </p>
+              </div>
+            </div>
+            <div class="details_bill | flex">
+              <p class="details_bill-about | font-body faded-color">Bill to</p>
+              <p class="details_bill-name | font-heading-S dark-color">
+                Alex Grim
+              </p>
+              <div class="details_bill-address">
+                <p class="details_bill-address-street | font-body faded-color">
+                  19 Union Terrace
+                </p>
+                <p class="details_bill-address-city | font-body faded-color">
+                  London
+                </p>
+                <p
+                  class="details_bill-address-postCode | font-body faded-color"
+                >
+                  E1 3EZ
+                </p>
+                <p class="details_bill-address-country | font-body faded-color">
+                  United Kingdom
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="details_footer">
+            <div class="details_footer-general | flex">
+              <p class="font-body faded-color">Item Name</p>
+              <div class="details_footer-general-right | flex">
+                <p class="font-body faded-color">QTY.</p>
+                <p class="font-body faded-color">Price</p>
+                <p class="font-body faded-color">Total</p>
+              </div>
+            </div>
+
+            <ul class="details_footer-item-list">
+              <li class="details_footer-item | flex">
+                <h4
+                  class="details_footer-item-name | font-heading-S-2 dark-color"
+                >
+                  Banner Design
+                </h4>
+                <div class="details_footer-item-about | flex">
+                  <p
+                    class="details_footer-item-about-qty | font-heading-S-2 faded-color"
+                  >
+                    1
+                  </p>
+                  <span class="font-heading-S-2 faded-color">x</span>
+                  <p
+                    class="details_footer-item-about-price | font-heading-S-2 faded-color"
+                  >
+                    £ 156.00
+                  </p>
+                  <div
+                    class="details_footer-item-about-total | font-heading-S-2 dark-color"
+                  >
+                    £ 156.00
+                  </div>
+                </div>
+              </li>
+
+              <li class="details_footer-item | flex">
+                <h4
+                  class="details_footer-item-name | font-heading-S-2 dark-color"
+                >
+                  Email Design
+                </h4>
+                <div class="details_footer-item-about | flex">
+                  <p
+                    class="details_footer-item-about-qty | font-heading-S-2 faded-color"
+                  >
+                    2
+                  </p>
+                  <span class="font-heading-S-2 faded-color">x</span>
+                  <p
+                    class="details_footer-item-about-price | font-heading-S-2 faded-color"
+                  >
+                    £ 200.00
+                  </p>
+                  <div
+                    class="details_footer-item-about-total | font-heading-S-2 dark-color"
+                  >
+                    £ 400.00
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="details_footer-bottom | flex">
+              <p
+                class="details_footer-bottom-text-mobile | font-body light-color"
+              >
+                Grand Total
+              </p>
+              <p
+                class="details_footer-bottom-text-desktop | font-body light-color"
+              >
+                Amount Due
+              </p>
+              <p
+                class="details_footer-bottom-amount | font-heading-M light-color"
+              >
+                £ 556.00
+              </p>
+            </div>
+          </div>
+        </section> -->
+      </div>
+
+      <!-- Edit invoice section -->
+      <form id="editForm" class="editForm form hide">
+        <button class="go-back-button | flex font-heading-S-2 dark-color">
+          <img src="/src/assets/icon-arrow-left.svg" alt="Arrow Left" />
+          Go back
+        </button>
+
+        <!-- <h2 class="form_header | font-heading-M">
+          Edit <span class="faded-color">#</span>XM9141
+        </h2> -->
+
+        <h3 class="form_header-from font-body-2 primary-color">
+          <strong>Bill From</strong>
+        </h3>
+
+        <div>
+        <label for="street_address_from" class="font-body faded-color"
+          >Street Address</label
+        >
+        <input
+          type="text"
+          name="street_address_from"
+          id="street_address_from"
+          class="font-heading-S-2 dark-color"
+        />
+        </div>
+
+        <div class="flex_for_tablet">
+          <div class="flex_for_mobile | flex">
+            <div>
+              <label for="city_from" class="font-body faded-color">City</label>
+              <input
+                type="text"
+                name="city_from"
+                id="city_from"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+
+            <div>
+              <label for="post_code_from" class="font-body faded-color"
+                >Post Code</label
+              >
+              <input
+                type="text"
+                name="post_code_from"
+                id="post_code_from"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="country_from" class="font-body faded-color"
+              >Country</label
+            >
+            <input
+              type="text"
+              name="country_from"
+              id="country_from"
+              class="font-heading-S-2 dark-color"
+            />
+          </div>
+        </div>
+
+        <h3 class="form_header-from font-body-2 primary-color">
+          <strong>Bill To</strong>
+        </h3>
+
+        <div>
+        <label for="clients_name_to" class="font-body faded-color"
+          >Client's Name</label
+        >
+        <input
+          type="text"
+          name="clients_name_to"
+          id="clients_name_to"
+          class="font-heading-S-2 dark-color"
+        />
+        </div>
+
+        <div>
+        <label for="clients_email_to" class="font-body faded-color"
+          >Client's Email</label
+        >
+        <input
+          type="email"
+          name="clients_email_to"
+          id="clients_email_to"
+          class="font-heading-S-2 dark-color"
+        />
+        </div>
+
+        <div>
+        <label for="street_address_to" class="font-body faded-color"
+          >Street Address</label
+        >
+        <input
+          type="text"
+          name="street_address_to"
+          id="street_address_to"
+          class="font-heading-S-2 dark-color"
+        />
+        </div>
+
+        <div class="flex_for_tablet">
+          <div class="flex_for_mobile | flex">
+            <div>
+              <label for="city_to" class="font-body faded-color">City</label>
+              <input
+                type="text"
+                name="city_to"
+                id="city_to"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+
+            <div>
+              <label for="post_code_to" class="font-body faded-color"
+                >Post Code</label
+              >
+              <input
+                type="text"
+                name="post_code_to"
+                id="post_code_to"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="country_to" class="font-body faded-color"
+              >Country</label
+            >
+            <input
+              type="text"
+              name="country_to"
+              id="country_to"
+              class="font-heading-S-2 dark-color"
+            />
+          </div>
+        </div>
+
+        <div class="flex_for_tablet | flex_for_tablet_two-items">
+          <div class="date_container">
+            <label for="date_to" class="font-body faded-color "
+              >Invoice Date</label
+            >
+
+            <span
+            
+              class="select_date font-heading-S-2 dark-color"
+              name="date_to"
+              id="date_to"
+            >
+            21 Aug 2021
+            </span>
+          </div>
+
+          <div class="options_container">
+            <label for="payment_to" class="font-body faded-color"
+              >Payment Terms</label
+            >
+
+            <span
+              class="select_options font-heading-S-2 dark-color"
+              name="payment_to"
+              id="payment_to"
+            >
+            Net 30 Days
+            </span>
+          <div class="hide options flex font-heading-S-2 dark-color">
+            <span>Net 1 Day</span>
+            <span>Net 7 Days</span>
+            <span>Net 14 Days</span>
+            <span>Net 30 Days</span>
+          </div>
+          </div>
+        </div>
+
+      <div>
+        <label for="description_to" class="font-body faded-color"
+          >Project Description</label
+        >
+        <input
+          type="text"
+          name="description_to"
+          id="description_to"
+          class="font-heading-S-2 dark-color"
+        />
+      </div>
+
+        <h3 class="form_header-list font-body-2 faded-color">
+          <strong>Item List</strong>
+        </h3>
+
+        <ul class="item_list">
+          <!-- <div class="item_labels hidden-for-mobile flex_for_tablet">
+            <p class="font-body faded-color">Item Name</p>
+            <p class="font-body faded-color">Qty.</p>
+            <p class="font-body faded-color">Price</p>
+            <p class="font-body faded-color">Total</p>
+          </div>
+          <li class="flex_for_tablet">
+            <div>
+              <label for="item_name" class="font-body faded-color"
+                >Item Name</label
+              >
+              <input
+                type="text"
+                name="item_name"
+                id="item_name"
+                class="font-heading-S-2 dark-color"
+              />
+            </div>
+            <div class="flex flex_for_mobile_three-items">
+              <div>
+                <label for="item_qty" class="font-body faded-color">Qty.</label>
+                <input
+                  type="number"
+                  name="item_qty"
+                  id="item_qty"
+                  class="font-heading-S-2 dark-color"
+                />
+              </div>
+              <div>
+                <label for="item_price" class="font-body faded-color"
+                  >Price</label
+                >
+                <input
+                  type="number"
+                  step=".01"
+                  name="item_price"
+                  id="item_price"
+                  class="font-heading-S-2 dark-color"
+                />
+              </div>
+              <div>
+                <p class="false_label | font-body faded-color">Total</p>
+                <p class="false_input | font-heading-S-2 faded-color">156.00</p>
+              </div>
+              <button class="delete_item-button">
+                <svg width="13" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M11.583 3.556v10.666c0 .982-.795 1.778-1.777 1.778H2.694a1.777 1.777 0 01-1.777-1.778V3.556h10.666zM8.473 0l.888.889h3.111v1.778H.028V.889h3.11L4.029 0h4.444z" fill="#888EB0" fill-rule="nonzero"/></svg>
+              </button>
+            </div>
+          </li> -->
+
+          
+
+          <button class="add_item-button | primary-color">
+            <strong>+ Add New Item</strong>
+          </button>
+        </ul>
+
+        <div class="form_footer | flex">
+          <button class="cancel-button | font-heading-S-2 faded-color" type="submit">Cancel</button>
+          <button class="save-button | font-heading-S-2 light-color type="submit">Save Changes</button>
+        </div>
+      </form>
+
+      <div class="overlay hide"></div>
+      <div class="overlay_delete-modal hide"></div>
+
+      <div class="delete-modal hide">
+        <h2 class="font-heading-M dark-color">Confirm Deletion</h2>
+        <p class="font-body faded-color">
+          Are you sure you want to delete invoice #XM9141? This action cannot be
+          undone.
+        </p>
+        <div class="flex">
+          <button class="delete-modal_cancelBtn | font-heading-S-2 faded-color">
+            Cancel
+          </button>
+          <button class="delete-modal_deleteBtn | font-heading-S-2 light-color">
+            Delete
+          </button>
+        </div>
+      </div>
+
+      <section class="main_footer | flex">
+        <button class="edit_button | font-heading-S-2 draft-color">Edit</button>
+        <button class="delete_button | font-heading-S-2 light-color">
+          Delete
+        </button>
+        <button class="markAsPaid_button | font-heading-S-2 light-color">
+          Mark as Paid
+        </button>
+      </section>
+    </main>
+
+    <!-- Buttons for mobile view -->
+  </body>
+</html>

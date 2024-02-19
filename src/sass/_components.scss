@@ -1,0 +1,225 @@
+@use "./variables";
+
+.primary_header {
+  height: 4.5rem;
+  justify-content: space-between;
+  background-color: variables.$neutral-400;
+
+  &_logo {
+    height: 100%;
+    padding: 1.25rem;
+    border-radius: 0 1rem 1rem 0;
+    background-image: linear-gradient(
+      to bottom,
+      variables.$primary-500,
+      variables.$primary-400
+    );
+  }
+
+  &-right {
+    gap: 1.5rem;
+
+    &-toggleDarkMode {
+      -webkit-mask: url("/src/assets/icon-moon.svg") no-repeat 100% 100%;
+      mask: url("/src/assets/icon-moon.svg") no-repeat 100% 100%;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color: variables.$primary-400;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &-line-divider {
+      width: 1px;
+      height: 4.5rem;
+      background-color: #494e6e;
+    }
+
+    &-avatar {
+      width: 2rem;
+      height: auto;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+.overlay,
+.overlay_delete-modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.overlay {
+  top: 4.5rem;
+}
+
+.overlay_delete-modal {
+  z-index: 999;
+  top: 0;
+}
+
+.delete-modal {
+  max-width: 480px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.5rem;
+  left: 1.5rem;
+  margin-inline: auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: variables.$neutral-100;
+  z-index: 1000;
+
+  h2,
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  div {
+    justify-content: flex-end;
+    gap: 0.5rem;
+
+    button {
+      padding: 1rem 1.5rem;
+      border-radius: 1.5rem;
+    }
+  }
+
+  &_cancelBtn {
+    background-color: rgba(55, 59, 83, 0.1);
+  }
+
+  &_deleteBtn {
+    background-color: variables.$accent-delete;
+  }
+}
+
+@media screen and (min-width: variables.$bp-tablet-start) {
+  .delete-modal {
+    padding: 3rem;
+    border-radius: 0.5rem;
+  }
+}
+
+// fullCalendar
+#calendar {
+  position: absolute;
+  top: 4.75rem;
+  width: 100%;
+  z-index: 1;
+  background-color: variables.$neutral-100;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2) !important;
+  -webkit-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2) !important;
+  -moz-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2) !important;
+}
+.fc-header-toolbar {
+  text-align: center !important;
+  padding-block: 1.5rem !important;
+  margin-bottom: 0 !important;
+  gap: 1.5rem;
+}
+.fc-toolbar-title {
+  font-family: variables.$ff-primary !important;
+  font-weight: variables.$fw-bold !important;
+  font-size: variables.$fs-heading-S !important;
+  color: variables.$neutral-800 !important;
+}
+.fc-prev-button,
+.fc-next-button {
+  width: 12px !important;
+  height: 12px !important;
+  padding: 0.25rem !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-color: none !important;
+}
+.fc-prev-button {
+  background-image: url("/src/assets/icon-arrow-left.svg") !important;
+}
+.fc-next-button {
+  background-image: url("/src/assets/icon-arrow-right.svg") !important;
+}
+.fc-icon {
+  display: none !important;
+}
+.fc-scrollgrid-sync-table {
+  margin-bottom: 1rem !important;
+}
+.fc-scrollgrid-section-header {
+  display: none !important;
+}
+.fc-scrollgrid {
+  border: none !important;
+}
+.fc-day {
+  font-family: variables.$ff-primary !important;
+  font-weight: variables.$fw-bold !important;
+  font-size: variables.$fs-heading-S !important;
+  color: variables.$neutral-800 !important;
+  border: none !important;
+}
+.fc-daygrid-day-top {
+  justify-content: center !important;
+}
+.fc-daygrid-day-frame {
+  height: 2rem !important;
+}
+.fc-daygrid-day-number {
+  cursor: pointer !important;
+
+  &:hover {
+    color: variables.$primary-600 !important;
+  }
+}
+.fc-day-other {
+  .fc-daygrid-day-number:hover {
+    color: variables.$neutral-800 !important;
+  }
+}
+
+// Loading spinner
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: variables.$neutral-400 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,161 @@
+@use "../variables";
+
+@media (hover: hover) {
+  .primary_header {
+    &-right {
+      &-toggleDarkMode:hover {
+        cursor: pointer;
+        background-color: variables.$primary-200;
+      }
+    }
+  }
+
+  #home {
+    main {
+      .secondary_header {
+        &-right {
+          &-filter-button:hover {
+            cursor: pointer;
+          }
+
+          &-newInvoice-button:hover {
+            cursor: pointer;
+            background-color: variables.$primary-500;
+          }
+
+          &-filter-options {
+            &-option:hover {
+              cursor: pointer;
+
+              .checkmark {
+                outline: 1px solid variables.$primary-600;
+              }
+            }
+          }
+        }
+      }
+
+      .invoices {
+        &_list {
+          &-item:hover {
+            border: 1px solid variables.$primary-600;
+          }
+        }
+      }
+    }
+  }
+
+  #invoice {
+    main {
+      .go-back-button:hover {
+        cursor: pointer !important;
+        color: variables.$primary-400;
+      }
+
+      .status_card {
+        &-right {
+          button:hover {
+            cursor: pointer;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    .editForm {
+      .select_date:hover {
+        cursor: default !important;
+      }
+    }
+  }
+
+  main {
+    .form {
+      input:hover {
+        cursor: pointer;
+      }
+
+      .go-back-button:hover {
+        cursor: pointer !important;
+        color: variables.$primary-600;
+      }
+
+      .select_options:hover,
+      .select_date:hover {
+        cursor: pointer;
+      }
+
+      .options {
+        span:hover {
+          cursor: pointer;
+          color: variables.$primary-600;
+        }
+      }
+
+      .add_item-button:hover {
+        cursor: pointer;
+        background-color: rgba(223, 227, 250, 1);
+      }
+
+      .delete_item-button:hover {
+        cursor: pointer;
+
+        & svg path {
+          fill: variables.$accent-delete;
+        }
+      }
+
+      &_footer {
+        .draft-button:hover {
+          cursor: pointer;
+          background-color: variables.$neutral-800 !important;
+        }
+
+        .cancel-button:hover {
+          cursor: pointer;
+          background-color: rgba(55, 59, 83, 0.2);
+        }
+
+        .save-button:hover {
+          cursor: pointer;
+          background-color: rgba(124, 93, 250, 0.9);
+        }
+      }
+    }
+
+    .delete-modal {
+      button:hover {
+        cursor: pointer !important;
+        opacity: 0.8 !important;
+      }
+    }
+
+    .main_footer {
+      .edit_button:hover {
+        cursor: pointer !important;
+        opacity: 0.8;
+      }
+
+      .delete_button:hover {
+        cursor: pointer !important;
+        opacity: 0.8;
+      }
+
+      .markAsPaid_button:hover {
+        cursor: pointer !important;
+        opacity: 0.8;
+      }
+    }
+  }
+  .delete-modal {
+    &_cancelBtn:hover {
+      cursor: pointer !important;
+      opacity: 0.8;
+    }
+
+    &_deleteBtn:hover {
+      cursor: pointer !important;
+      opacity: 0.8;
+    }
+  }
+}

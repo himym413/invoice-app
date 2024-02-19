@@ -1,0 +1,17 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$bp-desktop-start) {
+  main {
+    .form {
+      position: fixed;
+      inset: 0;
+      left: 8%;
+      right: 50%;
+    }
+
+    .overlay {
+      left: 8%;
+      top: 0;
+    }
+  }
+}

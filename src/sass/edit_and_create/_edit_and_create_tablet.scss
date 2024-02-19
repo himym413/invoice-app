@@ -1,0 +1,84 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$bp-tablet-start) {
+  main {
+    .form {
+      padding: 3.5rem;
+      right: 20%;
+      border-radius: 0 1.5rem 1.5rem 0;
+
+      &_footer {
+        margin-inline: -3.5rem;
+        margin-bottom: -3.5rem;
+        position: sticky;
+        bottom: -3.5rem;
+        background-color: white;
+      }
+
+      .flex_for_tablet {
+        display: flex;
+        gap: 2rem;
+
+        div {
+          flex-grow: 1;
+        }
+      }
+
+      .go-back-button {
+        display: none;
+      }
+
+      .item_list {
+        .item_labels {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+
+          p:nth-child(2) {
+            margin-left: 3%;
+          }
+
+          p:nth-child(3) {
+            margin-left: -8%;
+          }
+
+          p:nth-child(4) {
+            margin-right: 26%;
+          }
+        }
+      }
+
+      li.flex_for_tablet {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        label {
+          display: none;
+        }
+
+        .false_label {
+          display: none;
+        }
+
+        .false_input {
+          margin-top: 0.5rem;
+        }
+
+        &_two-items {
+          width: 100%;
+          justify-content: space-evenly;
+
+          div {
+            width: 100%;
+          }
+        }
+      }
+
+      .delete_item-button {
+        margin-top: -2rem;
+      }
+    }
+  }
+}

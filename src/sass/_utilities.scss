@@ -1,0 +1,283 @@
+@use "./variables";
+
+// Fonts utility classes
+html,
+body {
+  font-family: variables.$ff-primary;
+}
+
+.font-body,
+.font-body-2 {
+  font-weight: variables.$fw-medium;
+  font-size: variables.$fs-body;
+}
+
+.font-body {
+  letter-spacing: -0.1px;
+  line-height: 18px;
+}
+
+.font-body-2 {
+  letter-spacing: -0.25px;
+  line-height: 15px;
+}
+
+.font-heading-S,
+.font-heading-S-2 {
+  font-weight: variables.$fw-bold;
+  font-size: variables.$fs-heading-S;
+  letter-spacing: -0.25px;
+}
+
+.font-heading-S {
+  line-height: 24px;
+}
+
+.font-heading-S-2 {
+  line-height: 15px;
+}
+
+.font-heading-M {
+  font-weight: variables.$fw-bold;
+  font-size: variables.$fs-heading-M;
+  letter-spacing: -0.75px;
+  line-height: 22px;
+}
+
+.font-heading-L {
+  font-weight: variables.$fw-bold;
+  font-size: variables.$fs-heading-L;
+  letter-spacing: -1px;
+  line-height: 33px;
+}
+
+// Colors utillity classes
+.dark-color {
+  color: variables.$neutral-800;
+}
+
+.primary-color {
+  color: variables.$primary-600;
+}
+
+.faded-color {
+  color: variables.$primary-300;
+}
+
+.light-color {
+  color: variables.$neutral-100;
+}
+
+.paid-color {
+  color: variables.$accent-paid !important;
+}
+
+.paid-background {
+  background-color: rgba(51, 214, 159, 0.1);
+}
+
+.pending-color {
+  color: variables.$accent-pending !important;
+}
+
+.pending-background {
+  background-color: rgba(255, 143, 0, 0.1);
+}
+
+.delete-color {
+  color: variables.$accent-delete;
+}
+
+.draft-color {
+  color: variables.$neutral-400 !important;
+}
+
+.draft-background {
+  background-color: rgba(55, 59, 83, 0.1);
+}
+
+.opacity-half {
+  opacity: 0.5;
+}
+
+.hide {
+  display: none !important;
+}
+
+.select_options-marked {
+  border: 1px solid variables.$primary-600 !important;
+  background-image: url("/src/assets/icon-arrow-up.svg") !important;
+}
+
+.select_date-marked {
+  border: 1px solid variables.$primary-600 !important;
+  background-image: url("/src/assets/icon-calendar-filled.svg") !important;
+}
+
+.go-back-button {
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+// Other utillity classes
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.dot-paid,
+.dot-pending,
+.dot-draft {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.dot-paid {
+  background-color: variables.$accent-paid;
+}
+
+.dot-pending {
+  background-color: variables.$accent-pending;
+}
+
+.dot-draft {
+  background-color: variables.$neutral-400;
+}
+
+.edit_button,
+.delete_button,
+.markAsPaid_button {
+  width: max-content;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.edit_button {
+  background-color: rgba(126, 136, 195, 0.2);
+}
+
+.delete_button {
+  background-color: variables.$accent-delete;
+}
+
+.markAsPaid_button {
+  background-color: variables.$primary-600;
+}
+
+.invoices_list-empty {
+  flex-direction: column;
+
+  &-ilustration {
+    background-image: url("/src/assets/illustration-empty.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+    width: 12.5rem;
+    height: 12.5rem;
+    margin-inline: auto;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.error_empty-input {
+  position: relative;
+
+  label {
+    color: variables.$accent-delete;
+  }
+
+  input {
+    border-color: variables.$accent-delete !important;
+  }
+
+  &::after {
+    content: "can't be empty" !important;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    color: variables.$accent-delete;
+    font-size: 10px;
+    font-weight: variables.$fw-medium;
+  }
+}
+
+.error_empty-input-email {
+  position: relative;
+
+  label {
+    color: variables.$accent-delete;
+  }
+
+  input {
+    border-color: variables.$accent-delete !important;
+  }
+
+  &::after {
+    content: "invalid email";
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    color: variables.$accent-delete;
+    font-size: 10px;
+    font-weight: variables.$fw-medium;
+  }
+}
+
+.error_empty-input2 {
+  label {
+    color: variables.$accent-delete !important;
+  }
+
+  input {
+    border-color: variables.$accent-delete !important;
+  }
+}
+
+li.error_empty-input::after {
+  content: "";
+}
+
+.error_no-items {
+  position: relative;
+
+  &::after {
+    content: "add at least 1 item" !important;
+    position: absolute;
+    top: -2.5rem;
+    right: 1rem;
+    color: variables.$accent-delete;
+    font-size: 12px;
+    font-weight: variables.$fw-medium;
+  }
+}
+
+.error_value {
+  position: relative;
+
+  &::after {
+    content: "please use only positive numbers" !important;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    color: variables.$accent-delete;
+    font-size: 12px;
+    font-weight: variables.$fw-medium;
+  }
+}
+
+// Utillities that vary depending on screen size
+@media screen and (max-width: variables.$bp-mobile-end) {
+  .font-heading-L {
+    font-size: 1.5rem;
+  }
+
+  .hidden-for-mobile {
+    display: none;
+  }
+}

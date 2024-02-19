@@ -1,0 +1,39 @@
+// Colors
+$primary-200: #dfe3fa;
+$primary-300: #888eb0;
+$primary-400: #7e88c3;
+$primary-500: #9277ff;
+$primary-600: #7c5dfa;
+
+$neutral-100: #ffffff;
+$neutral-200: #f8f8fb;
+$neutral-400: #373b53;
+$neutral-500: #252945;
+$neutral-600: #1e2139;
+$neutral-700: #141625;
+$neutral-800: #0c0e16;
+$neutral-900: #000000;
+
+$accent-paid: #33d69f;
+$accent-pending: #ff8f00;
+$accent-delete: #ec5757;
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+$ff-primary: "League Spartan", sans-serif;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-body: 13px;
+$fs-heading-S: 15px;
+$fs-heading-M: 24px;
+$fs-heading-L: 36px;
+
+// Breakpoints
+$bp-mobile-end: 767px;
+$bp-tablet-start: 768px;
+$bp-tablet-end: 1199px;
+$bp-desktop-start: 1200px;
