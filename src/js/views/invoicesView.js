@@ -77,7 +77,7 @@ class InvoicesView {
   #generateItem(invoice) {
     return `
     <li class="invoices_list-item">
-      <a href="../invoice.html">
+      <a href="./invoice.html">
         <h2 class="invoices_list-item-id | font-heading-S-2 dark-color">
           <span class="primary-color">#</span>${invoice.id}
         </h2>
