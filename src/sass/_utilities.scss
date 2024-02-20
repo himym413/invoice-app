@@ -239,6 +239,10 @@ body {
   }
 }
 
+.error_empty-input3 {
+  border-color: variables.$accent-delete !important;
+}
+
 li.error_empty-input::after {
   content: "";
 }

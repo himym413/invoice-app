@@ -82,12 +82,38 @@ export default class FormView {
     });
     firstEmptyInput?.focus();
 
-    if (firstEmptyInput) return (this._emptyFieldsBoolean = true);
+    // mark empty fields in items and focus on first empty item
+    let items = Array.from(document.querySelectorAll(".item"));
+    let itemsInputs = [];
+    items?.forEach((item) =>
+      itemsInputs.push(...Array.from(item.querySelectorAll("input")))
+    );
+    itemsInputs?.forEach((input) => {
+      if (input.value === "") this._showErrorEmpty(input);
+      if (input.value !== "") this._hideErrorEmpty(input);
+    });
+
+    let firstEmptyInputItem;
+    if (!firstEmptyInput) {
+      firstEmptyInputItem = itemsInputs.find((item) => item.value === "");
+      firstEmptyInputItem?.scrollIntoView({
+        block: "center",
+        behavior: "smooth",
+      });
+      firstEmptyInputItem?.focus();
+    }
+
+    if (firstEmptyInput || firstEmptyInputItem)
+      return (this._emptyFieldsBoolean = true);
 
     return (this._emptyFieldsBoolean = false);
   }
 
   _showErrorEmpty(el) {
+    if (el.closest(".item")) {
+      return el.classList.add("error_empty-input3");
+    }
+
     if (
       el.parentElement.parentElement.classList.contains("flex_for_mobile") ||
       el.parentElement.parentElement.classList.contains("flex_for_tablet") ||
@@ -104,6 +130,12 @@ export default class FormView {
   }
 
   _hideErrorEmpty(el) {
+    if (el.closest(".item")) {
+      return el.classList.contains("error_empty-input3")
+        ? el.classList.remove("error_empty-input3")
+        : "";
+    }
+
     if (
       el.parentElement.parentElement.classList.contains("flex_for_mobile") ||
       el.parentElement.parentElement.classList.contains("flex_for_tablet") ||
